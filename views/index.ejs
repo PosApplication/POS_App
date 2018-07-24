@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Home Page</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	<link rel="Stylesheet" type="text/css" href="/stylesheets/style.css">
+ 	<script type="text/javascript" src="/javascript/validation.js"></script>
+<h1><center>POS Application</center></h1>
+
+
+</head>
+<body>
+
+ <form name="feedback" action="/productHandler" method="get" onSubmit="return checkform()">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     <ul >
+        <li class="active" >
+    <li><img src="/image/Amazon-Logo.jpg" width="20%" height="30%"> </li></ul>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      <li class="active"><a href="#Home">Home<span class="glyphicon glyphicon-home"></span></a></li>
+    <li><a href="#User">User<span class="glyphicon glyphicon-user"></span></a></li>
+   
+  
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         
+    <li><a href="Logout.html">Logout<span class="glyphicon glyphicon-log-out"></span></a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center" id="User">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav" style="background-color:black" height=60%>
+      <p><a href="Menu1.html">Menu1</a></p>
+      <p><a href="Menu2.html">Menu2</a></p>
+     
+    </div>
+    
+    <div class="col-sm-10 text-left"> 
+    <div class="row">
+    <div class="col-sm-10"></div></div><br>
+      <div class="form-group">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+              <label>Product Name</label></div>
+              <div class="col-sm-4">
+              <input type="text" class="form-control" id="productname" name="productname" onblur="validateProductName();" autofocus required>
+            <span id="id1" style="color:red"></span>
+            </div></div></div></br>
+            <div class="form-group">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+              <label>Product UPC Bar Code #</label></div>
+              <div class="col-sm-4">
+              <input type="text" class="form-control" id="productCode" name="productCode" onblur="checkProductCode();" required>
+           <span id="ProductCodeError" style="color:red"></span>
+            </div></div></div></br>
+            <div class="form-group">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+              <label>Product Price</label></div>
+              <div class="col-sm-4">
+              <input type="text" class="form-control" id="productprice" name="productprice" onblur="validatePrice();"  required>
+           <span id="PriceError" style="color:red"></span>
+            </div></div></div></br>
+            <div class="form-group">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+              <label>Product Type</label></div>
+              <div class="col-sm-4">
+             <div class="drop-down">
+            <select id="producttype"  name="producttype" onmouseout="providetax();" required>
+            <option value="select">--select--</option>
+          
+    <% list.forEach(function(value) { %>
+	<option><%= value.type %> </option><% }); %>
+</select>
+			   
+			   
+            </div>
+                       </div></div></div></br>
+                <div class="form-group">
+          <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-4">
+              <label for="producttax">Product Tax Price</label></div>
+              <div class="col-sm-4">
+             <!--  <button type="button" class="btn"  id="input" name="producttax" readonly="true">.00</button>-->
+              <input type="number" class="form-control" id="input" name="producttax" readonly="true"/>
+            </div></div></div></br>       
+            
+            <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
+             <input type="submit" value="Submit"  id="submitbutton" class="btn btn-success btn-block">
+             </div>
+             <div class="col-sm-2"></div>
+             <div class="col-sm-2">
+             <input type="reset" value="Cancel" name="cancel" class="btn btn-success btn-block" ><br>
+             </div>
+             
+             </div>
+             
+    
+  </div>
+</div></div>
+</form>
+</body>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+<footer class="container-fluid text-center">
+  <p><h5>© 1994, Cognizant Pvt Ltd. All Rights Reserved.</h5></p>
+</footer>
+</nav>
+</html>

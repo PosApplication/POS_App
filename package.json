@@ -1,0 +1,16 @@
+{
+  "name": "NodeProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "3.2.6",
+    "fs": "0.0.1-security",
+    "jade": "*",
+    "jsp": "0.0.2",
+    "mysql": "^2.16.0"
+  }
+}
